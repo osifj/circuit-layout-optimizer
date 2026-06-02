@@ -1,9 +1,32 @@
-# Circuit Layout Optimization Platform v1.1
+# Circuit Layout Optimization Platform v1.2
 
-**电路布局优化平台** — EDA 增强版，面向 IC CAD Physical Design / Placement Optimization 的原型系统。
+**电路布局优化平台** — EDA Placement Optimization 原型系统
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Streamlit](https://img.shields.io/badge/streamlit-1.28%2B-red)](https://streamlit.io/)
+
+---
+
+## Project Overview
+
+A complete **Placement Optimization** prototype for IC CAD Physical Design. Reads circuit modules and netlists in JSON, optimizes 2D module placement using **Simulated Annealing** with a multi-objective cost function (HPWL + Overlap + Boundary + Density + Congestion), and provides full visualization and evaluation.
+
+**Interfaces**: CLI (command line) + Streamlit Web platform
+
+---
+
+## Features
+
+- [x] **HPWL** (Half-Perimeter Wirelength) — EDA industry standard wirelength metric
+- [x] **Multi-objective cost function**: 5 tunable dimensions (α/β/γ/δ/ε)
+- [x] **Macro / Standard Cell / Fixed IO** module types with visual distinction
+- [x] **Multi-pin net** support (backward-compatible with 2-pin source/target format)
+- [x] **Congestion estimation**: grid-based routing density analysis with heatmap
+- [x] **Simulated Annealing** optimizer with fixed module constraints
+- [x] **6-panel convergence plots**: Cost / HPWL / Overlap / Congestion / Density / Temperature
+- [x] **Streamlit Web** platform: upload JSON, tune parameters, run, download results
+- [x] **Complete documentation**: technical report, presentation outline, interview script, resume bullets
 
 ---
 
@@ -271,6 +294,56 @@ streamlit run app.py
 - Streamlit — Web 界面
 - Pandas — 数据展示
 - Simulated Annealing — 优化算法
+
+---
+
+## Example Results
+
+### EDA Small (200×200, 15 modules, 4 fixed IO)
+
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| HPWL | 3470.65 | 3115.97 | **-10.2%** |
+| Total Cost | 3521.50 | 3217.34 | -8.6% |
+| Max Congestion | 8 | 7 | -12.5% |
+| Overlap | 0 | 0 | ✅ |
+
+### EDA Medium (300×300, 24 modules, 6 fixed IO)
+
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| HPWL | 7326.02 | 6446.72 | **-12.0%** |
+| Total Cost | 7386.64 | 6527.96 | -11.6% |
+| Congested Cells | 19 | 16 | -15.8% |
+| Avg Congestion | 2.79 | 2.63 | -5.7% |
+
+---
+
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Project Summary (CN)](docs/project_summary_cn.md) | 中文项目总结 |
+| [Project Summary (EN)](docs/project_summary_en.md) | English project summary |
+| [Presentation Outline (CN)](docs/internship_presentation_outline_cn.md) | 中文 PPT 大纲 (10 slides) |
+| [Presentation Outline (EN)](docs/internship_presentation_outline_en.md) | English PPT outline |
+| [Technical Report (CN)](docs/technical_report_cn.md) | 正式技术报告 |
+| [Interview Script (CN)](docs/interview_explanation_cn.md) | 面试/答辩讲解稿 |
+| [Resume Description (CN)](docs/resume_description_cn.md) | 中文简历描述 |
+| [Resume Description (EN)](docs/resume_description_en.md) | English resume bullets |
+| [Web Platform Guide](docs/web_platform_guide.md) | Web 平台使用指南 |
+
+---
+
+## Future Work
+
+- [ ] Algorithm comparison: Force-Directed, Genetic Algorithm
+- [ ] Larger benchmarks (50-100+ modules)
+- [ ] Analytical Placement + Legalization
+- [ ] DEF/LEF format support
+- [ ] Timing-driven placement
+- [ ] OpenROAD integration
+- [ ] RL-based / GNN-based placement
 
 ---
 
