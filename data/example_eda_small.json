@@ -1,0 +1,31 @@
+{
+  "chip_width": 200,
+  "chip_height": 200,
+  "modules": [
+    {"id": "IO1", "width": 5, "height": 5, "type": "macro", "fixed": true, "x": 0, "y": 0},
+    {"id": "IO2", "width": 5, "height": 5, "type": "macro", "fixed": true, "x": 195, "y": 0},
+    {"id": "IO3", "width": 5, "height": 5, "type": "macro", "fixed": true, "x": 0, "y": 195},
+    {"id": "IO4", "width": 5, "height": 5, "type": "macro", "fixed": true, "x": 195, "y": 195},
+    {"id": "MEM", "width": 30, "height": 25, "type": "macro"},
+    {"id": "CPU", "width": 40, "height": 35, "type": "macro"},
+    {"id": "GPU", "width": 35, "height": 30, "type": "macro"},
+    {"id": "U1", "width": 3, "height": 2, "type": "standard_cell"},
+    {"id": "U2", "width": 3, "height": 2, "type": "standard_cell"},
+    {"id": "U3", "width": 3, "height": 2, "type": "standard_cell"},
+    {"id": "U4", "width": 3, "height": 2, "type": "standard_cell"},
+    {"id": "U5", "width": 3, "height": 2, "type": "standard_cell"},
+    {"id": "U6", "width": 3, "height": 2, "type": "standard_cell"},
+    {"id": "U7", "width": 3, "height": 2, "type": "standard_cell"},
+    {"id": "U8", "width": 3, "height": 2, "type": "standard_cell"}
+  ],
+  "nets": [
+    {"name": "net_io2mem", "pins": ["IO1", "MEM"], "weight": 2.0},
+    {"name": "net_mem2cpu", "pins": ["MEM", "CPU"], "weight": 3.0},
+    {"name": "net_cpu2gpu", "pins": ["CPU", "GPU"], "weight": 3.0},
+    {"name": "net_gpu2io", "pins": ["GPU", "IO2", "IO3"], "weight": 2.0},
+    {"name": "net_multi", "pins": ["CPU", "U1", "U2", "U3"], "weight": 1.5},
+    {"name": "net_multi2", "pins": ["GPU", "U4", "U5", "U6", "U7", "U8"], "weight": 1.5},
+    {"name": "net_io_ring", "pins": ["IO1", "IO2", "IO4"], "weight": 1.0},
+    {"name": "net_mem_gpu", "pins": ["MEM", "GPU", "IO4"], "weight": 2.0}
+  ]
+}

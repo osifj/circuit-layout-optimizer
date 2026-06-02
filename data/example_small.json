@@ -1,0 +1,16 @@
+{
+  "chip_width": 100,
+  "chip_height": 100,
+  "modules": [
+    {"id": "A", "width": 10, "height": 8},
+    {"id": "B", "width": 12, "height": 10},
+    {"id": "C", "width": 8, "height": 8},
+    {"id": "D", "width": 15, "height": 10}
+  ],
+  "nets": [
+    {"source": "A", "target": "B", "weight": 1.0},
+    {"source": "A", "target": "C", "weight": 2.0},
+    {"source": "B", "target": "D", "weight": 1.5},
+    {"source": "C", "target": "D", "weight": 1.0}
+  ]
+}
