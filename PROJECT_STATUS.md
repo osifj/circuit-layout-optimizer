@@ -1,7 +1,7 @@
 # PROJECT STATUS — Circuit Layout Optimization Platform
 
 **Last updated**: 2026-06-02  
-**Current version**: v1.2 — Web Platform Completed
+**Current version**: v1.4 — Final Presentation Package
 
 ---
 
@@ -12,7 +12,19 @@
 | v1.0 | 2026-06-02 | MVP: CLI + SA + basic visualization |
 | v1.1 | 2026-06-02 | EDA Enhanced: HPWL, Macro/SC/Fixed, Congestion, Multi-pin nets |
 | v1.2 | 2026-06-02 | Streamlit Web platform + full documentation |
-| v1.3 | planned | Algorithm comparison (Force-Directed, GA) |
+| v1.3 | 2026-06-02 | Presentation materials: summary, report, interview script, resume |
+| v1.4 | 2026-06-02 | **Final package**: PPT (.pptx + .md), 5min speech, 1min pitch, demo script, checklist |
+
+---
+
+## v1.4 Additions
+
+- `docs/北方集成电路_CAD实习_电路布局优化平台_汇报PPT.pptx` — 10 页 PowerPoint（带图片）
+- `docs/北方集成电路_CAD实习_电路布局优化平台_汇报PPT.md` — Markdown 版 PPT 大纲
+- `docs/final_5min_speech_cn.md` — 5 分钟逐页演讲稿
+- `docs/interview_1min_pitch_cn.md` — 1 分钟面试版项目介绍
+- `docs/live_demo_script_cn.md` — 现场演示流程（5 步）
+- `docs/final_project_checklist_cn.md` — 最终项目检查清单
 
 ---
 
